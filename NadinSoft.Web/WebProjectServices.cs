@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using NadinSoft.Web.Middlewares;
 
-namespace NadinSoft.Web.Controllers;
+namespace NadinSoft.Web;
 
 public static class WebProjectServices
 {
