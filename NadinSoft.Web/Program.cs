@@ -1,6 +1,6 @@
 using NadinSoft.Application;
 using NadinSoft.Infrastructure;
-using NadinSoft.Web.Controllers;
+using NadinSoft.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
