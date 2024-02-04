@@ -1,3 +1,4 @@
+using NadinSoft.Application;
 using NadinSoft.Infrastructure;
 using NadinSoft.Web.Controllers;
 
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddWebServices(builder.Configuration);
+builder.Services.AddApplicationServices();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

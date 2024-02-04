@@ -1,12 +1,14 @@
 using System.Reflection;
 using Ardalis.GuardClauses;
 using FluentValidation;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NadinSoft.Domain.Abstraction.Identity;
 using NadinSoft.Domain.Abstraction.Repositories.Base;
 using NadinSoft.Domain.Abstraction.Repositories.User;
+using NadinSoft.Domain.Entities;
 using NadinSoft.Domain.Models.Identity;
 using NadinSoft.Infrastructure.Repositories.Base;
 using NadinSoft.Infrastructure.Repositories.User;
@@ -37,7 +39,10 @@ public static class InfrastructureProjectServices
       options.UseSqlServer(connectionString);
     });
     
-
+    services.AddIdentityCore<AppUser>()
+      .AddEntityFrameworkStores<ApplicationDbContext>()
+      .AddSignInManager<SignInManager<AppUser>>();
+    
     return services;
   }
 }
