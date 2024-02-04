@@ -2,6 +2,7 @@ using System.Reflection;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using NadinSoft.Application.Products.Commands;
+using NadinSoft.Application.Products.Commands.Add;
 
 namespace NadinSoft.Application;
 

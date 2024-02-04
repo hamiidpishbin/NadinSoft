@@ -8,7 +8,7 @@ using NadinSoft.Domain.Constants;
 using NadinSoft.Domain.Entities;
 using NadinSoft.Domain.Models.Common;
 
-namespace NadinSoft.Application.Products.Commands;
+namespace NadinSoft.Application.Products.Commands.Add;
 
 public class AddProductCommandHandler : IRequestHandler<AddProductCommand, Result<bool>>
 {

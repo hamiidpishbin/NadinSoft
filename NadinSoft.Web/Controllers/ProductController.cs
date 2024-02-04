@@ -1,6 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using NadinSoft.Application.Products.Commands;
+using NadinSoft.Application.Products.Commands.Add;
 
 namespace NadinSoft.Web.Controllers;
 

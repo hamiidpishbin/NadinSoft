@@ -1,5 +1,6 @@
 using AutoMapper;
 using NadinSoft.Application.Products.Commands;
+using NadinSoft.Application.Products.Commands.Add;
 using NadinSoft.Domain.Entities;
 
 namespace NadinSoft.Application.MappingProfiles;

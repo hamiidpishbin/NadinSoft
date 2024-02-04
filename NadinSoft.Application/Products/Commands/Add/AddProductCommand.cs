@@ -1,7 +1,7 @@
 using MediatR;
 using NadinSoft.Domain.Models.Common;
 
-namespace NadinSoft.Application.Products.Commands;
+namespace NadinSoft.Application.Products.Commands.Add;
 
 public record AddProductCommand : IRequest<Result<bool>>
 {

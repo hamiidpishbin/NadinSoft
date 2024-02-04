@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions;
 using FluentValidation;
 
-namespace NadinSoft.Application.Products.Commands;
+namespace NadinSoft.Application.Products.Commands.Add;
 
 public class AddProductValidator : AbstractValidator<AddProductCommand>
 {
