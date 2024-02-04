@@ -1,4 +1,4 @@
-using NadinSoft.Domain.Abstraction.Repositories;
+using NadinSoft.Domain.Abstraction.Repositories.User;
 using NadinSoft.Infrastructure.Repositories.Base;
 
 namespace NadinSoft.Infrastructure.Repositories.User;
