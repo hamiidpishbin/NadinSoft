@@ -12,6 +12,9 @@ public static class InfrastructureProjectServices
   public static IServiceCollection AddInfrastructureServices(this IServiceCollection services,
     IConfiguration configuration)
   {
+    services.AddHttpContextAccessor();
+
+    
     var connectionString = configuration.GetConnectionString("DefaultConnection");
     Guard.Against.Null(connectionString, message: "Connection String 'DefaultConnection' Not Found");
     services.AddDbContext<ApplicationDbContext>(options =>
