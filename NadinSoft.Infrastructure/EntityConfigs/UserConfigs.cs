@@ -9,6 +9,8 @@ public class UserConfigs : IEntityTypeConfiguration<AppUser>
 {
   public void Configure(EntityTypeBuilder<AppUser> builder)
   {
+    builder.Property(u => u.UserName).HasMaxLength(15);
+    
     var passwordHasher = new PasswordHasher<AppUser>();
 
     var user1 = new AppUser()

@@ -24,4 +24,5 @@ public static class IdentityErrors
   public const string NoSpecialCharacterInPassword = "Password must contain one or more special characters.";
   public const string InvalidCharactersInPassword = "Password contain the following characters £ # “” or spaces.";
   public const string PasswordConfirmationRequired = "Password confirmation is required.";
+  public const string LongPassword = "Password cannot have more than 15 characters.";
 }

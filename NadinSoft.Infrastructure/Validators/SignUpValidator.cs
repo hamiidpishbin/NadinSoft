@@ -26,6 +26,7 @@ public class SignUpValidator : AbstractValidator<SignUpDto>
     RuleFor(model => model.Password)
       .NotEmpty().WithMessage(IdentityErrors.PasswordRequired)
       .MinimumLength(8).WithMessage(IdentityErrors.ShortPassword)
+      .MaximumLength(20).WithMessage(IdentityErrors.LongPassword)
       .Matches(@"[A-Z]+").WithMessage(IdentityErrors.NoUpperCaseInPassword)
       .Matches(@"[a-z]+").WithMessage(IdentityErrors.NoLowerCaseInPassword)
       .Matches(@"[0-9]+").WithMessage(IdentityErrors.NoNumberInPassword)
