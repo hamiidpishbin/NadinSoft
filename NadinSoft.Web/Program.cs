@@ -1,6 +1,7 @@
 using NadinSoft.Application;
 using NadinSoft.Infrastructure;
 using NadinSoft.Web;
+using NadinSoft.Web.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
