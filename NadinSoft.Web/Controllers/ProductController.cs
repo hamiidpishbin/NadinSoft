@@ -1,8 +1,8 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using NadinSoft.Application.Products.Commands;
 using NadinSoft.Application.Products.Commands.Add;
+using NadinSoft.Application.Products.Commands.Delete;
 using NadinSoft.Application.Products.Queries.Get;
 
 namespace NadinSoft.Web.Controllers;
@@ -35,6 +35,17 @@ public class ProductController : BaseApiController
   {
     var command = _mapper.Map<AddProductCommand>(request);
     var result = await Mediator!.Send(command, cancellationToken);
+    return HandleResult(result);
+  }
+  
+  [HttpDelete("{id}")]
+  public async Task<IActionResult> Delete(int id, CancellationToken cancellationToken)
+  {
+    var result = await Mediator!.Send(new DeleteProductCommand
+    {
+      Id = id
+    }, cancellationToken);
+
     return HandleResult(result);
   }
 }
