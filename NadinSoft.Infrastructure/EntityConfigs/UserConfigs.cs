@@ -28,6 +28,7 @@ public class UserConfigs : IEntityTypeConfiguration<AppUser>
       Email = "haniepishbin@gmail.com",
     };
     user2.PasswordHash = passwordHasher.HashPassword(user2, "Hanie@123");
-    
+
+    builder.HasData(new List<AppUser>() { user1, user2 });
   }
 }

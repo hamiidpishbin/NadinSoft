@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NadinSoft.Infrastructure;
 
@@ -11,9 +12,11 @@ using NadinSoft.Infrastructure;
 namespace NadinSoft.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240205074216_CommentProductSeed")]
+    partial class CommentProductSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -195,36 +198,6 @@ namespace NadinSoft.Infrastructure.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "aaa41cfb-0a43-4811-a1fd-bba978dee77b",
-                            DisplayName = "Hamid",
-                            Email = "hamidpishbin@gmail.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEFPzZiVMEVPsxXFFenn8+M49r7k81ftA2+4gjWojFK8BLheSEDv1cqWXcp35v9SZ9w==",
-                            PhoneNumberConfirmed = false,
-                            TwoFactorEnabled = false,
-                            UserName = "hamidpishbin"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "c8ea800a-4fb8-47b5-b3f3-af3f00741581",
-                            DisplayName = "Hanie",
-                            Email = "haniepishbin@gmail.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAENsUSzIZPCeR7kw9aslyLJEZypqbhGn/aQqD6H9H8Fh+oPm/RZI2hMQCBUxWFFfGKA==",
-                            PhoneNumberConfirmed = false,
-                            TwoFactorEnabled = false,
-                            UserName = "haniepishbin"
-                        });
                 });
 
             modelBuilder.Entity("NadinSoft.Domain.Entities.AppUserRole", b =>
@@ -291,48 +264,6 @@ namespace NadinSoft.Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            IsAvailable = true,
-                            ManufactureEmail = "product1email@gmail.com",
-                            ManufacturePhone = "09110111111",
-                            Name = "Product 1",
-                            ProductDate = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Local),
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            IsAvailable = true,
-                            ManufactureEmail = "product2email@gmail.com",
-                            ManufacturePhone = "09120121212",
-                            Name = "Product 2",
-                            ProductDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Local),
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            IsAvailable = true,
-                            ManufactureEmail = "product3email@gmail.com",
-                            ManufacturePhone = "09130131313",
-                            Name = "Product 3",
-                            ProductDate = new DateTime(2024, 2, 3, 0, 0, 0, 0, DateTimeKind.Local),
-                            UserId = 2
-                        },
-                        new
-                        {
-                            Id = 4,
-                            IsAvailable = true,
-                            ManufactureEmail = "product4email@gmail.com",
-                            ManufacturePhone = "09140141414",
-                            Name = "Product 4",
-                            ProductDate = new DateTime(2024, 2, 4, 0, 0, 0, 0, DateTimeKind.Local),
-                            UserId = 2
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
