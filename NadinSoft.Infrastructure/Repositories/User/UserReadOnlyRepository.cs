@@ -13,7 +13,7 @@ internal class UserReadOnlyRepository : ReadOnlyRepository<Domain.Entities.AppUs
 
   public async Task<Domain.Entities.AppUser?> FindByEmailAsync(string email, CancellationToken cancellationToken)
   {
-    return await DbContext.Users.Where(u => u.Email == email).FirstOrDefaultAsync(cancellationToken);
+    return await DbContext.Users.AsNoTracking().Where(u => u.Email == email).FirstOrDefaultAsync(cancellationToken);
   }
 
   public new async Task<bool> AnyAsync(Expression<Func<Domain.Entities.AppUser, bool>> predicate, CancellationToken cancellationToken)

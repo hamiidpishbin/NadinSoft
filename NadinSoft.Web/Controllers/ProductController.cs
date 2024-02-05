@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NadinSoft.Application.Products.Commands.Add;
 using NadinSoft.Application.Products.Commands.Delete;
+using NadinSoft.Application.Products.Commands.Edit;
 using NadinSoft.Application.Products.Queries.Get;
 
 namespace NadinSoft.Web.Controllers;
@@ -34,6 +35,14 @@ public class ProductController : BaseApiController
   public async Task<IActionResult> Add(AddProductRequest request, CancellationToken cancellationToken)
   {
     var command = _mapper.Map<AddProductCommand>(request);
+    var result = await Mediator!.Send(command, cancellationToken);
+    return HandleResult(result);
+  }
+  
+  [HttpPatch]
+  public async Task<IActionResult> Update(EditProductRequest request, CancellationToken cancellationToken)
+  {
+    var command = _mapper.Map<EditProductCommand>(request);
     var result = await Mediator!.Send(command, cancellationToken);
     return HandleResult(result);
   }

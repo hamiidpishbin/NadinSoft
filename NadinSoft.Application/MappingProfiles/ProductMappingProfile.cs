@@ -1,5 +1,6 @@
 using AutoMapper;
 using NadinSoft.Application.Products.Commands.Add;
+using NadinSoft.Application.Products.Commands.Edit;
 using NadinSoft.Application.Products.Queries.Get;
 using NadinSoft.Domain.Entities;
 
@@ -12,5 +13,7 @@ public class ProductMappingProfile : Profile
     CreateMap<AddProductCommand, Product>();
     CreateMap<AddProductRequest, AddProductCommand>();
     CreateMap<Product, GetProductsResponse>();
+    CreateMap<EditProductCommand, Product>();
+    CreateMap<EditProductRequest, EditProductCommand>();
   }
 }
